@@ -1,0 +1,108 @@
+@use "../general-styles/colors" as clr;
+
+@media screen and (min-width: 500px) {
+  // --------------------------------------- Utility Classes
+  .padd {
+    padding: 5rem 4rem;
+  }
+
+  .card-links-container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  // --------------------------------------- Header
+  .header {
+    padding: 1rem 2rem;
+
+    &__nav {
+      transform: scale(1);
+      position: static;
+      border: none;
+      padding-right: 0;
+      padding-left: 0;
+
+      flex-direction: row;
+    }
+
+    &__hamburger {
+      display: none;
+    }
+  }
+
+  // --------------------------------------- Hero
+  .hero__content--title {
+    span:first-child {
+      display: inline;
+    }
+  }
+
+  // --------------------------------------- Trainer
+  .trainer__content--card {
+    gap: 4rem;
+  }
+
+  // --------------------------------------- Features
+  .features__content--cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, min-content);
+
+    &__card:nth-child(2n + 1) {
+      border-left: 3px solid clr.clrs(clr-primary);
+    }
+  }
+
+  // --------------------------------------- Pricing
+  .pricing {
+    &__content {
+      &--plans {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, min-content);
+      }
+    }
+  }
+
+  // --------------------------------------- Contact
+  .contact {
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, min-content);
+      gap: 5rem 1rem;
+
+      &--titles {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+      }
+    }
+  }
+
+  // --------------------------------------- Footer
+  .footer {
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, min-content);
+
+      &--logo {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+      }
+
+      &--programs {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+      &--links {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+      &--newsletter {
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+      }
+      &--social {
+        grid-column: 1 / -1;
+        grid-row: 4 / 5;
+      }
+    }
+  }
+}

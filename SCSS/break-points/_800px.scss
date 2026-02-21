@@ -1,0 +1,126 @@
+@use "../general-styles/typography" as type;
+
+@media screen and (min-width: 800px) {
+  // --------------------------------------- Utility Classes
+  .sec-title {
+    span {
+      display: inline-block;
+      word-spacing: 2px;
+    }
+  }
+
+  // --------------------------------------- Hero
+  .hero__content {
+    flex-direction: row;
+    align-items: center;
+
+    & > div {
+      flex-basis: 60%;
+    }
+
+    &--title {
+      font-size: 12rem;
+    }
+  }
+
+  // --------------------------------------- Gallery
+  .gallery__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    &--img:last-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  // --------------------------------------- Pricing
+  .pricing {
+    &__content {
+      &--plans {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: min-content;
+        gap: 0;
+
+        &__plan.famous-plan,
+        &__plan.expert-plan {
+          margin-left: -1px;
+          z-index: 1;
+        }
+
+        &__plan.famous-plan {
+          transform: scaleY(1.05);
+        }
+      }
+    }
+  }
+
+  // --------------------------------------- Testimonial
+  .testimonial {
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, min-content);
+      gap: 0 4rem;
+
+      &--title {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+
+        span {
+          display: block;
+        }
+      }
+
+      &--info {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+
+        align-self: center;
+
+        &__text {
+          font-size: type.fs(mc);
+        }
+
+        &__name {
+          font-size: type.fs(m);
+        }
+
+        &__program {
+          font-size: type.fs(sc);
+        }
+      }
+
+      &--img {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+    }
+  }
+
+  // --------------------------------------- Footer
+  .footer {
+    &__content {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, min-content);
+
+      &--programs {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+
+      &--links {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+
+      &--newsletter {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+      }
+
+      &--social {
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+      }
+    }
+  }
+}

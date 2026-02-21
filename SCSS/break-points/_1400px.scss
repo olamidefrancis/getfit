@@ -1,0 +1,11 @@
+@media screen and (min-width: 1400px) {
+  // --------------------------------------- Hero
+  .hero__content--title {
+    transform: rotate(0);
+    font-size: 15rem;
+
+    span:last-child {
+      margin-left: 0;
+    }
+  }
+}

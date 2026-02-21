@@ -1,0 +1,64 @@
+@use "../general-styles/typography" as type;
+
+@media screen and (min-width: 1200px) {
+  // --------------------------------------- Utility Classes
+  .sec-title {
+    font-size: type.fs(xxl);
+  }
+
+  .card-title {
+    font-size: type.fs(lc);
+  }
+
+  // --------------------------------------- Trainers
+  .trainer__content {
+    &--card {
+      padding-right: 4rem;
+      gap: 0 2rem;
+
+      &__img {
+        grid-column: 1 / 7;
+      }
+
+      &__title,
+      &__desc,
+      .card-links-container {
+        grid-column: 7 / -1;
+      }
+    }
+
+    &--card:nth-child(3) {
+      padding-left: 4rem;
+
+      .trainer__content--card__img {
+        grid-column: 5 / -1;
+      }
+
+      .trainer__content--card__title,
+      .trainer__content--card__desc,
+      .card-links-container {
+        grid-column: 1 / 5;
+      }
+    }
+  }
+
+  // --------------------------------------- Features
+  .features__content--cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, min-content);
+  }
+
+  // --------------------------------------- Contact {
+  .contact__content--info {
+    align-self: center;
+
+    i {
+      font-size: type.fs(l);
+    }
+
+    span {
+      font-size: type.fs(l);
+      font-family: "Sarpanch", sans-serif;
+    }
+  }
+}
